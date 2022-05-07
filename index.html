@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>土豆SAMA的生日！</title>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <iframe src="https://potatosamabirthday.github.io/" allow="autoplay"></iframe>
   </head>
   <body>
     <div class="htmleaf-container">
@@ -18,16 +17,7 @@
            window.onload = function() {
              setInterval("timeNow()", 1000);
              setInterval("start()", 1000);
-             setInterval("auto()",100);
            };
-           function auto(){
-             let m=document.getElementById("m");
-             if(m.paused){
-               m.paused=false;
-               m.play();
-               alert("");
-             }
-           }
            function start(){
 
              var userName = document.getElementById("userName").value;

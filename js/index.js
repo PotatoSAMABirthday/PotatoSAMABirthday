@@ -14,6 +14,7 @@ $("#login-button").click(function (event) {
         $("form").fadeOut(500);
         $(".wrapper").addClass("form-success");
         document.getElementById("login-button").value=true;
+        document.getElementById("m").play();
     } else {
         alert("Wrong Password");
     }
