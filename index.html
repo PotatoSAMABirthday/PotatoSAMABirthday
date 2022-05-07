@@ -12,7 +12,40 @@
       <div class="wrapper">
         <div class="container">
           <h1>土豆SAMA的生日！</h1>
+          <h2 id="clock"></h2>
+          <script>
+           window.onload = function() {setInterval("timeNow()", 1000);setInterval("start()", 1000);};
 
+           function start(){
+             console.log(new Date(new Date("May 08 2022 0:0:0")-new Date()-new Date(60*60*1000)));
+
+             var userName = document.getElementById("userName").value;
+             var pwd = document.getElementById("pwd").value;
+             if (userName == "张家阳" && pwd == "0508") {
+               if (new Date() >= new Date("May 08 2022 0:0:0")) {
+                 setTimeout(function () {
+                   location.href = "BirthdayCake.html";
+                 }, 0);
+               }
+
+             }
+
+           }
+            function timeNow() {
+              let h, m, s;
+              let date = new Date(new Date("Sun May 08 2022 0:0:0 GMT+0100 (British Summer Time)").getTime()-(new Date().getTime()));
+              h = date.getHours()-1;
+              h = h > 9 ? h : "0" + h;
+              m = date.getMinutes();
+              m = m > 9 ? m : "0" + m;
+              s = date.getSeconds();
+              s = s > 9 ? s : "0" + s;
+              let time = h + ":" + m + ":" + s;
+              document.getElementById("clock").innerHTML="倒计时："+time+" !";
+            }
+
+
+          </script>
           <form class="form">
             <input
               id="userName"
@@ -22,6 +55,7 @@
             />
             <input id="pwd" name="pwd" type="password" placeholder="密码" />
             <button type="submit" id="login-button">进入</button>
+            <div id="log" value="false"></div>
           </form>
         </div>
         <ul class="bg-bubbles">
@@ -58,7 +92,7 @@
         </ul>
       </div>
     </div>
-	<audio src="music/1.mp3" autoplay="autoplay" loop="loop">
+    <audio src="music/1.mp3" autoplay="autoplay" loop="loop"></audio>
     <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
   </body>
